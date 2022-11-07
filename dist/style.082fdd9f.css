@@ -1,0 +1,136 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(149, 208, 212) 16%, rgb(115, 164, 185) 80%);
+}
+body #player .header {
+  margin-top: 22px;
+}
+body #player .header .song-title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 22px;
+}
+body #player .header .singer {
+  margin-top: 4px;
+  color: rgb(228, 239, 245);
+  text-align: center;
+  font-size: 18px;
+}
+body #player .slide-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4px;
+}
+body #player .slide-area .slide {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(240, 239, 239, 0.6);
+  background-color: rgba(184, 185, 185, 0.3);
+  border-radius: 4px;
+  width: 64px;
+  height: 7px;
+  margin-top: 3px;
+}
+body #player .slide-area .slide .current {
+  margin-left: 1px;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 28px;
+  height: 3px;
+}
+body #player .slide-area .show-area {
+  margin-top: 15vh;
+}
+body #player .slide-area .show-area .animation .frame {
+  width: 300px;
+  height: 300px;
+  /* 相对定位 */
+  position: relative;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-top-color: #a0eaf0;
+  border-left-color: #a0eaf0;
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2s linear infinite;
+}
+body #player .slide-area .show-area .animation .frame .center {
+  font-size: 18px;
+  color: rgb(115, 164, 185);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 239, 250);
+  position: absolute;
+  left: 45px;
+  top: 45px;
+  right: 45px;
+  bottom: 45px;
+  border-radius: 50%;
+}
+body #player .slide-area .show-area .animation .frame::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-bottom-color: #a8d5e7;
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.4s linear infinite;
+}
+body #player .slide-area .show-area .animation .frame::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 21px;
+  right: 21px;
+  bottom: 21px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-right-color: #f0eeee;
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 3s linear infinite;
+}
+body #player .slide-area .show-area .lyric {
+  text-align: center;
+  margin: 60px;
+  color: rgb(58, 63, 63);
+}
+body #player .slide-area .show-area .lyric p {
+  font-size: 17px;
+  margin: 3px;
+}
+body #player .slide-area .show-area .lyric .current {
+  color: rgb(255, 255, 255);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=/style.082fdd9f.css.map */
