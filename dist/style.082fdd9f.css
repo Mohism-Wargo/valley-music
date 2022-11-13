@@ -10,33 +10,38 @@ html {
 }
 
 body {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(180deg, rgb(149, 208, 212) 16%, rgb(115, 164, 185) 80%);
 }
+body #player {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 body #player .header {
-  margin-top: 22px;
-}
-body #player .header .song-title {
-  color: rgb(255, 255, 255);
-  text-align: center;
-  font-size: 22px;
-}
-body #player .header .singer {
-  margin-top: 4px;
-  color: rgb(228, 239, 245);
-  text-align: center;
-  font-size: 18px;
-}
-body #player .slide-area {
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 4px;
 }
-body #player .slide-area .slide {
+body #player .header .song-title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 20px;
+}
+body #player .header .singer {
+  margin-top: 3px;
+  color: rgb(228, 239, 245);
+  text-align: center;
+  font-size: 16px;
+}
+body #player .header .slide {
   display: flex;
   align-items: center;
   border: 1px solid rgba(240, 239, 239, 0.6);
@@ -44,31 +49,54 @@ body #player .slide-area .slide {
   border-radius: 4px;
   width: 64px;
   height: 7px;
-  margin-top: 3px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
-body #player .slide-area .slide .current {
+body #player .header .slide .current {
   margin-left: 1px;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
   width: 28px;
   height: 3px;
 }
-body #player .slide-area .show-area {
-  margin-top: 15vh;
+body #player .show-area {
+  display: flex;
+  width: 200vw;
+  justify-content: space-between;
+  align-items: center;
 }
-body #player .slide-area .show-area .animation .frame {
-  width: 300px;
-  height: 300px;
+body #player .show-area.home {
+  transform: translateX(50vw);
+  transition: transform 0.3s;
+}
+body #player .show-area.all-lyrics {
+  transform: translateX(-50vw);
+  transition: transform 0.3s;
+}
+body #player .show-area .show {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+body #player .show-area .show .animation {
+  margin-top: 30px;
+}
+body #player .show-area .show .animation .frame {
+  width: 240px;
+  height: 240px;
   /* 相对定位 */
   position: relative;
   border-radius: 50%;
-  border: 7px solid transparent;
+  border: 6px solid transparent;
   border-top-color: #a0eaf0;
   border-left-color: #a0eaf0;
   /* 执行动画：动画名 时长 线性的 无限次播放 */
   animation: spin 2s linear infinite;
 }
-body #player .slide-area .show-area .animation .frame .center {
+body #player .show-area .show .animation .frame .center {
   font-size: 18px;
   color: rgb(115, 164, 185);
   display: flex;
@@ -82,7 +110,7 @@ body #player .slide-area .show-area .animation .frame .center {
   bottom: 45px;
   border-radius: 50%;
 }
-body #player .slide-area .show-area .animation .frame::before {
+body #player .show-area .show .animation .frame::before {
   content: "";
   position: absolute;
   left: 10px;
@@ -90,12 +118,12 @@ body #player .slide-area .show-area .animation .frame::before {
   right: 10px;
   bottom: 10px;
   border-radius: 50%;
-  border: 6px solid transparent;
+  border: 5px solid transparent;
   border-bottom-color: #a8d5e7;
   /* 执行动画：动画名 时长 线性的 无限次播放 */
   animation: spin 2.4s linear infinite;
 }
-body #player .slide-area .show-area .animation .frame::after {
+body #player .show-area .show .animation .frame::after {
   content: "";
   position: absolute;
   left: 21px;
@@ -103,22 +131,105 @@ body #player .slide-area .show-area .animation .frame::after {
   right: 21px;
   bottom: 21px;
   border-radius: 50%;
-  border: 5px solid transparent;
+  border: 4px solid transparent;
   border-right-color: #f0eeee;
   /* 执行动画：动画名 时长 线性的 无限次播放 */
   animation: spin 3s linear infinite;
 }
-body #player .slide-area .show-area .lyric {
+body #player .show-area .show .lyrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
   text-align: center;
-  margin: 60px;
-  color: rgb(58, 63, 63);
+  margin-top: 50px;
+  color: rgb(46, 48, 48);
 }
-body #player .slide-area .show-area .lyric p {
-  font-size: 17px;
-  margin: 3px;
+body #player .show-area .show .lyrics p {
+  font-size: 16px;
+  margin: 6px;
 }
-body #player .slide-area .show-area .lyric .current {
+body #player .show-area .show .lyrics .current {
   color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+body #player .show-area .show-lyrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+}
+body #player .show-area .show-lyrics p {
+  font-size: 16px;
+  margin: 6px;
+}
+body #player .show-area .show-lyrics .current {
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+}
+body #player .Nav-bar {
+  margin-bottom: 10px;
+}
+body #player .Nav-bar .buttons {
+  display: flex;
+  justify-content: center;
+}
+body #player .Nav-bar .buttons svg {
+  width: 24px;
+  height: 24px;
+  margin: 18px;
+  opacity: 0.7;
+}
+body #player .Nav-bar .player-bar {
+  color: rgb(228, 239, 245);
+  font-size: 14px;
+  display: flex;
+  padding: 0 28px;
+  margin-top: 10px;
+  align-items: center;
+}
+body #player .Nav-bar .player-bar .bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(119, 128, 128, 0.6);
+  border-radius: 2px;
+  margin: 0 12px;
+}
+body #player .Nav-bar .player-bar .bar .progress {
+  width: 30%;
+  height: 100%;
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+  position: relative;
+}
+body #player .Nav-bar .player-bar .bar .progress::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -6px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(211, 239, 250);
+  background-size: contain;
+}
+body #player .Nav-bar .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #player .Nav-bar .actions svg {
+  width: 28px;
+  height: 28px;
+  margin: 20px;
+  opacity: 0.9;
+}
+body #player .Nav-bar .actions .play {
+  width: 52px;
+  height: 52px;
+  opacity: 1;
 }
 
 @keyframes spin {

@@ -3,7 +3,8 @@ $color-2: rgba(115, 164, 185, 1);
 $color-3: rgb(255, 255, 255);
 $color-4: rgb(228, 239, 245);
 $color-5: rgb(211, 239, 250);
-$color-6: rgb(58, 63, 63);
+$color-6: rgb(46, 48, 48);
+$color-7: rgba(119, 128, 128, 0.6);
 
 * {
     margin: 0;
@@ -16,35 +17,38 @@ html {
 }
 
 body {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, rgb(149, 208, 212) 16%, rgba(115, 164, 185, 1) 80%);
 
     #player {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
         .header {
-            margin-top: 22px;
-
-            .song-title {
-                color: $color-3;
-                text-align: center;
-                font-size: 22px;
-            }
-
-            .singer {
-                margin-top: 4px;
-                color: $color-4;
-                text-align: center;
-                font-size: 18px;
-            }
-        }
-
-        .slide-area {
+            margin-top: 12px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 4px;
+
+            .song-title {
+                color: $color-3;
+                text-align: center;
+                font-size: 20px;
+            }
+
+            .singer {
+                margin-top: 3px;
+                color: $color-4;
+                text-align: center;
+                font-size: 16px;
+            }
 
             .slide {
                 display: flex;
@@ -54,7 +58,8 @@ body {
                 border-radius: 4px;
                 width: 64px;
                 height: 7px;
-                margin-top: 3px;
+                margin-top: 8px;
+                margin-bottom: 20px;
 
                 .current {
                     margin-left: 1px;
@@ -64,19 +69,42 @@ body {
                     height: 3px;
                 }
             }
+        }
 
-            .show-area {
-                margin-top: 15vh;
+        .show-area {
+            display: flex;
+            width: 200vw;
+            justify-content: space-between;
+            align-items: center;
+
+            &.home {
+                transform: translateX(50vw);
+                transition: transform 0.3s;
+            }
+
+            &.all-lyrics {
+                transform: translateX(-50vw);
+                transition: transform 0.3s;
+            }
+
+            .show {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
 
                 .animation {
+                    margin-top: 30px;
 
                     .frame {
-                        width: 300px;
-                        height: 300px;
+                        width: 240px;
+                        height: 240px;
                         /* 相对定位 */
                         position: relative;
                         border-radius: 50%;
-                        border: 7px solid transparent;
+                        border: 6px solid transparent;
                         border-top-color: #a0eaf0;
                         border-left-color: #a0eaf0;
                         /* 执行动画：动画名 时长 线性的 无限次播放 */
@@ -106,7 +134,7 @@ body {
                         right: 10px;
                         bottom: 10px;
                         border-radius: 50%;
-                        border: 6px solid transparent;
+                        border: 5px solid transparent;
                         border-bottom-color: #a8d5e7;
                         /* 执行动画：动画名 时长 线性的 无限次播放 */
                         animation: spin 2.4s linear infinite;
@@ -120,26 +148,122 @@ body {
                         right: 21px;
                         bottom: 21px;
                         border-radius: 50%;
-                        border: 5px solid transparent;
+                        border: 4px solid transparent;
                         border-right-color: #f0eeee;
                         /* 执行动画：动画名 时长 线性的 无限次播放 */
                         animation: spin 3s linear infinite;
                     }
                 }
 
-                .lyric {
+                .lyrics {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
                     text-align: center;
-                    margin: 60px;
+                    margin-top: 50px;
                     color: $color-6;
 
                     p {
-                        font-size: 17px;
-                        margin: 3px;
+                        font-size: 16px;
+                        margin: 6px;
                     }
 
                     .current {
                         color: $color-3;
+                        font-size: 17px;
                     }
+                }
+            }
+
+            .show-lyrics {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 100vw;
+                height: 100%;
+
+                p {
+                    font-size: 16px;
+                    margin: 6px;
+                }
+
+                .current {
+                    color: $color-3;
+                    font-size: 17px;
+                }
+            }
+        }
+
+        .Nav-bar {
+            margin-bottom: 10px;
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    margin: 18px;
+                    opacity: 0.7;
+                }
+            }
+
+            .player-bar {
+                color: $color-4;
+                font-size: 14px;
+                display: flex;
+                padding: 0 28px;
+                margin-top: 10px;
+                align-items: center;
+
+                .bar {
+                    flex: 1;
+                    height: 4px;
+                    background: $color-7;
+                    border-radius: 2px;
+                    margin: 0 12px;
+
+                    .progress {
+                        width: 30%;
+                        height: 100%;
+                        border-radius: 2px;
+                        background: $color-3;
+                        position: relative;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            top: -6px;
+                            display: block;
+                            width: 15px;
+                            height: 15px;
+                            border-radius: 50%;
+                            background: $color-5;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+
+            .actions {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    width: 28px;
+                    height: 28px;
+                    margin: 20px;
+                    opacity: 0.9;
+                }
+
+                .play {
+                    width: 52px;
+                    height: 52px;
+                    opacity: 1;
                 }
             }
         }
