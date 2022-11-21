@@ -22,6 +22,7 @@ body #player {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 body #player .header {
   margin-top: 12px;
@@ -62,6 +63,7 @@ body #player .header .slide .current {
 body #player .show-area {
   display: flex;
   width: 200vw;
+  height: calc(100vh - 288px);
   justify-content: space-between;
   align-items: center;
 }
@@ -75,11 +77,11 @@ body #player .show-area.all-lyrics {
 }
 body #player .show-area .show {
   display: flex;
-  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
+  height: 100%;
 }
 body #player .show-area .show .animation {
   margin-top: 30px;
@@ -94,10 +96,10 @@ body #player .show-area .show .animation .frame {
   border-top-color: #a0eaf0;
   border-left-color: #a0eaf0;
   /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2s linear infinite;
+  animation: spin 2.2s linear infinite;
 }
 body #player .show-area .show .animation .frame .center {
-  font-size: 18px;
+  font-size: 17px;
   color: rgb(115, 164, 185);
   display: flex;
   justify-content: center;
@@ -121,7 +123,7 @@ body #player .show-area .show .animation .frame::before {
   border: 5px solid transparent;
   border-bottom-color: #a8d5e7;
   /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2.4s linear infinite;
+  animation: spin 2.6s linear infinite;
 }
 body #player .show-area .show .animation .frame::after {
   content: "";
@@ -134,7 +136,7 @@ body #player .show-area .show .animation .frame::after {
   border: 4px solid transparent;
   border-right-color: #f0eeee;
   /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 3s linear infinite;
+  animation: spin 3.2s linear infinite;
 }
 body #player .show-area .show .lyrics {
   display: flex;
@@ -155,16 +157,19 @@ body #player .show-area .show .lyrics .current {
 body #player .show-area .show-lyrics {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   width: 100vw;
   height: 100%;
+  overflow: hidden;
 }
-body #player .show-area .show-lyrics p {
+body #player .show-area .show-lyrics .container {
+  transition: all 0.4s;
+}
+body #player .show-area .show-lyrics .container p {
   font-size: 16px;
-  margin: 6px;
+  margin: 10px;
 }
-body #player .show-area .show-lyrics .current {
+body #player .show-area .show-lyrics .container .current {
   color: rgb(255, 255, 255);
   font-size: 17px;
 }
@@ -194,10 +199,10 @@ body #player .Nav-bar .player-bar .bar {
   height: 4px;
   background: rgba(119, 128, 128, 0.6);
   border-radius: 2px;
-  margin: 0 12px;
+  margin: 0 16px;
 }
 body #player .Nav-bar .player-bar .bar .progress {
-  width: 30%;
+  width: 0%;
   height: 100%;
   border-radius: 2px;
   background: rgb(255, 255, 255);
@@ -206,7 +211,7 @@ body #player .Nav-bar .player-bar .bar .progress {
 body #player .Nav-bar .player-bar .bar .progress::after {
   content: "";
   position: absolute;
-  right: 0;
+  right: -6px;
   top: -6px;
   display: block;
   width: 15px;
@@ -226,7 +231,7 @@ body #player .Nav-bar .actions svg {
   margin: 20px;
   opacity: 0.9;
 }
-body #player .Nav-bar .actions .play {
+body #player .Nav-bar .actions .btn-play {
   width: 52px;
   height: 52px;
   opacity: 1;

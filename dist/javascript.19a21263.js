@@ -124,50 +124,257 @@ svgPlaceholder.style.width = '0';
 svgPlaceholder.style.height = '0';
 svgPlaceholder.style.overflow = 'hidden';
 document.body.appendChild(svgPlaceholder);
-svgPlaceholder.innerHTML = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <symbol id=\"like\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n        d=\"M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z\"\n        data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"download\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 29 12 17h8V6h8v11h8L24 29Z\" clip-rule=\"evenodd\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M42 37H6M34 44H14\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"share\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M35 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM13 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m30 13.575-12.66 7.67M17.338 26.564l13.34 7.883\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M35 32a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"comment\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 6H4v30h9v5l10-5h21V6ZM14 21h20\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"more\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"14\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"34\" data-follow-fill=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-once\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28\"\n            data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pre\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m22 31-7-7 7-7M31 31l-7-7 7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M20 24v-6.928l6 3.464L32 24l-6 3.464-6 3.464V24Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"next\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m17 31 7-7-7-7M26 31l7-7-7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"list\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M7.95 11.95h32M7.95 23.95h32M7.95 35.95h32\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n</svg>\n";
+svgPlaceholder.innerHTML = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <symbol id=\"like-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n        d=\"M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z\"\n        data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"download-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 29 12 17h8V6h8v11h8L24 29Z\" clip-rule=\"evenodd\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M42 37H6M34 44H14\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"share-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M35 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM13 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m30 13.575-12.66 7.67M17.338 26.564l13.34 7.883\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M35 32a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"comment-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 6H4v30h9v5l10-5h21V6ZM14 21h20\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"more-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"14\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"34\" data-follow-fill=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-once-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28\"\n            data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pre-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m22 31-7-7 7-7M31 31l-7-7 7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M20 24v-6.928l6 3.464L32 24l-6 3.464-6 3.464V24Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"next-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m17 31 7-7-7-7M26 31l7-7-7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"list-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M7.95 11.95h32M7.95 23.95h32M7.95 35.95h32\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pause-icon\"\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M19 18v12M29 18v12\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n</svg>\n";
+},{}],"src/javascript/Swiper.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var Swiper = /*#__PURE__*/_createClass(function Swiper(node) {
+  _classCallCheck(this, Swiper);
+  if (!node) throw new Error('请传递需要绑定的DOM元素');
+  var root = typeof node === 'string' ? document.querySelector(node) : node;
+  var eventHub = {
+    'swipeLeft': [],
+    'swipeRight': []
+  };
+  var initX;
+  var newX;
+  var clock;
+  root.ontouchstart = function (e) {
+    initX = e.changedTouches[0].pageX;
+  };
+  root.ontouchmove = function (e) {
+    if (clock) clearInterval(clock);
+    clock = setTimeout(function () {
+      newX = e.changedTouches[0].pageX;
+      if (newX - initX > 50) {
+        eventHub['swipeRight'].forEach(function (fn) {
+          return fn.bind(root)();
+        });
+      } else if (initX - newX > 50) {
+        eventHub['swipeLeft'].forEach(function (fn) {
+          return fn.bind(root)();
+        });
+      }
+    }, 100);
+  };
+  this.on = function (type, fn) {
+    if (eventHub[type]) {
+      eventHub[type].push(fn);
+    }
+  };
+  this.off = function (type, fn) {
+    var index = eventHub[type].indexOf(fn);
+    if (index !== -1) {
+      eventHub[type].splice(index, 1);
+    }
+  };
+});
+var _default = Swiper;
+exports.default = _default;
 },{}],"src/javascript/index.js":[function(require,module,exports) {
 "use strict";
 
 require("./icons");
+var _Swiper = _interopRequireDefault(require("./Swiper.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-var $ = function $(selector) {
-  return document.querySelector(selector);
-};
-var $$ = function $$(selector) {
-  return document.querySelectorAll(selector);
-};
 var Player = /*#__PURE__*/function () {
   function Player(node) {
+    var _this = this;
     _classCallCheck(this, Player);
-    this.root = typeof node === 'string' ? $(node) : node;
+    this.root = typeof node === 'string' ? document.querySelector(node) : node;
+    this.$ = function (selector) {
+      return _this.root.querySelector(selector);
+    };
+    this.$$ = function (selector) {
+      return _this.root.querySelectorAll(selector);
+    };
     this.songList = [];
     this.currentIndex = 0;
+    this.audio = new Audio();
+    this.lyricsArr = [];
+    this.lyricIndex = -1;
     this.start();
-    // https://github.com/Mohism-Wargo/Simulate-data/blob/main/music-list.json
+    this.bind();
+    // https://mohism-wargo.github.io/Simulate-data/music-list.json
   }
   _createClass(Player, [{
     key: "start",
     value: function start() {
-      var _this = this;
-      fetch('https://github.com/Mohism-Wargo/Simulate-data/blob/main/music-list.json', {
-        mode: 'no-cors'
-      }).then(function (res) {
+      var _this2 = this;
+      fetch('https://mohism-wargo.github.io/Simulate-data/music-list.json').then(function (res) {
         return res.json();
       }).then(function (data) {
         console.log(data);
-        _this.songList = data;
+        _this2.songList = data;
+        _this2.loadSong();
       });
     }
   }, {
     key: "bind",
-    value: function bind() {}
+    value: function bind() {
+      var self = this;
+      this.$('.btn-play').onclick = function () {
+        if (this.classList.contains('pause')) {
+          self.audio.play();
+          this.classList.remove('pause');
+          this.classList.add('playing');
+          this.querySelector('use').setAttribute('xlink:href', '#pause-icon');
+        } else if (this.classList.contains('playing')) {
+          self.audio.pause();
+          this.classList.remove('playing');
+          this.classList.add('pause');
+          this.querySelector('use').setAttribute('xlink:href', '#play-icon');
+        }
+      };
+      this.$('.btn-pre').onclick = function () {
+        self.currentIndex = (self.songList.length + self.currentIndex - 1) % self.songList.length;
+        self.loadSong();
+        self.playSong();
+      };
+      this.$('.btn-next').onclick = function () {
+        self.currentIndex = (self.currentIndex + 1) % self.songList.length;
+        self.loadSong();
+        self.playSong();
+      };
+      this.audio.ontimeupdate = function () {
+        self.locateLyric();
+        self.setProgressBar();
+      };
+      var swiper = new _Swiper.default(this.$('.show-area'));
+      swiper.on('swipeLeft', function () {
+        this.classList.remove('home');
+        this.classList.add('all-lyrics');
+        console.log('left');
+      });
+      swiper.on('swipeRight', function () {
+        this.classList.remove('all-lyrics');
+        this.classList.add('home');
+        console.log('right');
+      });
+    }
+  }, {
+    key: "loadSong",
+    value: function loadSong() {
+      var _this3 = this;
+      var songObj = this.songList[this.currentIndex];
+      this.$('.header h1').innerText = songObj.title;
+      this.$('.header p').innerText = songObj.author + '-' + songObj.album;
+      this.audio.src = songObj.url;
+      this.audio.onloadedmetadata = function () {
+        return _this3.$('.time-end').innerText = _this3.formateTime(_this3.audio.duration);
+      };
+      this.loadLyrics();
+    }
+  }, {
+    key: "playSong",
+    value: function playSong() {
+      var _this4 = this;
+      this.audio.oncanplaythrough = function () {
+        return _this4.audio.play();
+      };
+    }
+  }, {
+    key: "loadLyrics",
+    value: function loadLyrics() {
+      var _this5 = this;
+      fetch(this.songList[this.currentIndex].lyric).then(function (res) {
+        return res.json();
+      }).then(function (data) {
+        console.log(data.lrc.lyric);
+        _this5.setLyrics(data.lrc.lyric);
+        window.lyrics = data.lrc.lyric;
+      });
+    }
+  }, {
+    key: "locateLyric",
+    value: function locateLyric() {
+      var currentTime = this.audio.currentTime * 1000;
+      var nextLineTime = this.lyricsArr[this.lyricIndex + 1][0];
+      if (currentTime > nextLineTime && this.lyricIndex < this.lyricsArr.length - 1) {
+        this.lyricIndex++;
+        var node = this.$('[data-time="' + this.lyricsArr[this.lyricIndex][0] + '"]');
+        if (node) this.setLyricToCenter(node);
+        console.log(node);
+        this.$$('.show-area .lyrics p')[0].innerText = this.lyricsArr[this.lyricIndex][1];
+        this.$$('.show-area .lyrics p')[1].innerText = this.lyricsArr[this.lyricIndex + 1] ? this.lyricsArr[this.lyricIndex + 1][1] : '';
+      }
+    }
+  }, {
+    key: "setLyrics",
+    value: function setLyrics(lyrics) {
+      this.lyricIndex = 0;
+      var fragment = document.createDocumentFragment();
+      var lyricsArr = [];
+      this.lyricsArr = lyricsArr;
+      lyrics.split(/\n/).filter(function (str) {
+        return str.match(/\[.+?\]/);
+      }).forEach(function (line) {
+        var str = line.replace(/\[.+?\]/g, '');
+        line.match(/\[.+?\]/g).forEach(function (t) {
+          t = t.replace(/[\[\]]/g, '');
+          var milliseconds = parseInt(t.slice(0, 2)) * 60 * 1000 + parseInt(t.slice(3, 5)) * 1000 + parseInt(t.slice(6));
+          lyricsArr.push([milliseconds, str]);
+        });
+      });
+      lyricsArr.filter(function (line) {
+        return line[1].trim() !== '';
+      }).sort(function (v1, v2) {
+        if (v1[0] > v2[0]) {
+          return 1;
+        } else {
+          return -1;
+        }
+      }).forEach(function (line) {
+        var node = document.createElement('p');
+        node.setAttribute('data-time', line[0]);
+        node.innerText = line[1];
+        fragment.appendChild(node);
+      });
+      this.$('.show-lyrics .container').innerHTML = '';
+      this.$('.show-lyrics .container').appendChild(fragment);
+    }
+  }, {
+    key: "setLyricToCenter",
+    value: function setLyricToCenter(node) {
+      var translateY = node.offsetTop - this.$('.show-lyrics').offsetHeight / 2;
+      translateY = translateY > 0 ? translateY : 0;
+      this.$('.show-lyrics .container').style.transform = "translateY(-".concat(translateY, "px)");
+      this.$$('.show-lyrics p').forEach(function (node) {
+        return node.classList.remove('current');
+      });
+      node.classList.add('current');
+    }
+  }, {
+    key: "setProgressBar",
+    value: function setProgressBar() {
+      var percent = this.audio.currentTime * 100 / this.audio.duration + '%';
+      this.$('.bar .progress').style.width = percent;
+      this.$('.time-start').innerText = this.formateTime(this.audio.currentTime);
+    }
+  }, {
+    key: "formateTime",
+    value: function formateTime(secondsTotal) {
+      var minutes = parseInt(secondsTotal / 60);
+      minutes = minutes >= 10 ? '' + minutes : '0' + minutes;
+      var seconds = parseInt(secondsTotal % 60);
+      seconds = seconds >= 10 ? '' + seconds : '0' + seconds;
+      return minutes + ':' + seconds;
+    }
   }]);
   return Player;
 }();
-new Player('#player');
-},{"./icons":"src/javascript/icons.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+window.p = new Player('#player');
+},{"./icons":"src/javascript/icons.js","./Swiper.js":"src/javascript/Swiper.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -192,7 +399,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55980" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56004" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
