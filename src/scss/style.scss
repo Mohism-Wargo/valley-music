@@ -3,7 +3,7 @@ $color-2: rgba(115, 164, 185, 1);
 $color-3: rgb(255, 255, 255);
 $color-4: rgb(228, 239, 245);
 $color-5: rgb(211, 239, 250);
-$color-6: rgb(46, 48, 48);
+$color-6: rgb(60, 61, 61);
 $color-7: rgba(119, 128, 128, 0.6);
 
 * {
@@ -172,7 +172,7 @@ body {
 
                     .current {
                         color: $color-3;
-                        font-size: 17px;
+                        // font-size: 16px;
                     }
                 }
             }
@@ -186,16 +186,17 @@ body {
                 overflow: hidden;
 
                 .container {
-                    transition: all .4s;
+                    transition: all .6s;
 
                     p {
                         font-size: 16px;
                         margin: 10px;
+                        color: $color-6;
                     }
 
                     .current {
                         color: $color-3;
-                        font-size: 17px;
+                        // font-size: 16px;
                     }
                 }
             }

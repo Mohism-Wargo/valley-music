@@ -254,12 +254,10 @@ var Player = /*#__PURE__*/function () {
       swiper.on('swipeLeft', function () {
         this.classList.remove('home');
         this.classList.add('all-lyrics');
-        console.log('left');
       });
       swiper.on('swipeRight', function () {
         this.classList.remove('all-lyrics');
         this.classList.add('home');
-        console.log('right');
       });
     }
   }, {
@@ -271,7 +269,7 @@ var Player = /*#__PURE__*/function () {
       this.$('.header p').innerText = songObj.author + '-' + songObj.album;
       this.audio.src = songObj.url;
       this.audio.onloadedmetadata = function () {
-        return _this3.$('.time-end').innerText = _this3.formateTime(_this3.audio.duration);
+        return _this3.$('.time-end').innerText = _this3.formatTime(_this3.audio.duration);
       };
       this.loadLyrics();
     }
@@ -304,7 +302,6 @@ var Player = /*#__PURE__*/function () {
         this.lyricIndex++;
         var node = this.$('[data-time="' + this.lyricsArr[this.lyricIndex][0] + '"]');
         if (node) this.setLyricToCenter(node);
-        console.log(node);
         this.$$('.show-area .lyrics p')[0].innerText = this.lyricsArr[this.lyricIndex][1];
         this.$$('.show-area .lyrics p')[1].innerText = this.lyricsArr[this.lyricIndex + 1] ? this.lyricsArr[this.lyricIndex + 1][1] : '';
       }
@@ -323,12 +320,13 @@ var Player = /*#__PURE__*/function () {
         line.match(/\[.+?\]/g).forEach(function (t) {
           t = t.replace(/[\[\]]/g, '');
           var milliseconds = parseInt(t.slice(0, 2)) * 60 * 1000 + parseInt(t.slice(3, 5)) * 1000 + parseInt(t.slice(6));
-          lyricsArr.push([milliseconds, str]);
+          if (str !== '') lyricsArr.push([milliseconds, str]);
         });
       });
-      lyricsArr.filter(function (line) {
+      this.lyricsArr.filter(function (line) {
         return line[1].trim() !== '';
-      }).sort(function (v1, v2) {
+      });
+      this.lyricsArr.sort(function (v1, v2) {
         if (v1[0] > v2[0]) {
           return 1;
         } else {
@@ -357,13 +355,15 @@ var Player = /*#__PURE__*/function () {
   }, {
     key: "setProgressBar",
     value: function setProgressBar() {
-      var percent = this.audio.currentTime * 100 / this.audio.duration + '%';
+      var percent = this.audio.currentTime / this.audio.duration * 100 + '%';
       this.$('.bar .progress').style.width = percent;
-      this.$('.time-start').innerText = this.formateTime(this.audio.currentTime);
+      console.log(this.audio.currentTime);
+      console.log(this.audio.ended);
+      this.$('.time-start').innerText = this.formatTime(this.audio.currentTime);
     }
   }, {
-    key: "formateTime",
-    value: function formateTime(secondsTotal) {
+    key: "formatTime",
+    value: function formatTime(secondsTotal) {
       var minutes = parseInt(secondsTotal / 60);
       minutes = minutes >= 10 ? '' + minutes : '0' + minutes;
       var seconds = parseInt(secondsTotal % 60);
@@ -399,7 +399,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56004" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58756" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

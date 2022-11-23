@@ -60,12 +60,10 @@ class Player {
         swiper.on('swipeLeft', function () {
             this.classList.remove('home')
             this.classList.add('all-lyrics')
-            console.log('left')
         })
         swiper.on('swipeRight', function () {
             this.classList.remove('all-lyrics')
             this.classList.add('home')
-            console.log('right')
         })
     }
     loadSong() {
@@ -73,7 +71,7 @@ class Player {
         this.$('.header h1').innerText = songObj.title
         this.$('.header p').innerText = songObj.author + '-' + songObj.album
         this.audio.src = songObj.url
-        this.audio.onloadedmetadata = () => this.$('.time-end').innerText = this.formateTime(this.audio.duration)
+        this.audio.onloadedmetadata = () => this.$('.time-end').innerText = this.formatTime(this.audio.duration)
 
         this.loadLyrics()
     }
@@ -98,7 +96,6 @@ class Player {
             this.lyricIndex++
             let node = this.$('[data-time="' + this.lyricsArr[this.lyricIndex][0] + '"]')
             if (node) this.setLyricToCenter(node)
-            console.log(node)
             this.$$('.show-area .lyrics p')[0].innerText = this.lyricsArr[this.lyricIndex][1]
             this.$$('.show-area .lyrics p')[1].innerText = this.lyricsArr[this.lyricIndex + 1] ? this.lyricsArr[this.lyricIndex + 1][1] : ''
         }
@@ -116,11 +113,13 @@ class Player {
                 line.match(/\[.+?\]/g).forEach(t => {
                     t = t.replace(/[\[\]]/g, '')
                     let milliseconds = parseInt(t.slice(0, 2)) * 60 * 1000 + parseInt(t.slice(3, 5)) * 1000 + parseInt(t.slice(6))
-                    lyricsArr.push([milliseconds, str])
+                    if (str !== '')
+                        lyricsArr.push([milliseconds, str])
                 })
             })
 
-        lyricsArr.filter(line => line[1].trim() !== '').sort((v1, v2) => {
+        this.lyricsArr.filter(line => line[1].trim() !== '')
+        this.lyricsArr.sort((v1, v2) => {
             if (v1[0] > v2[0]) {
                 return 1
             } else {
@@ -144,11 +143,13 @@ class Player {
     }
 
     setProgressBar() {
-        let percent = (this.audio.currentTime * 100 / this.audio.duration) + '%'
+        let percent = (this.audio.currentTime / this.audio.duration) * 100 + '%'
         this.$('.bar .progress').style.width = percent
-        this.$('.time-start').innerText = this.formateTime(this.audio.currentTime)
+        console.log(this.audio.currentTime)
+        console.log(this.audio.ended)
+        this.$('.time-start').innerText = this.formatTime(this.audio.currentTime)
     }
-    formateTime(secondsTotal) {
+    formatTime(secondsTotal) {
         let minutes = parseInt(secondsTotal / 60)
         minutes = minutes >= 10 ? '' + minutes : '0' + minutes
         let seconds = parseInt(secondsTotal % 60)

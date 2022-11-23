@@ -144,7 +144,7 @@ body #player .show-area .show .lyrics {
   justify-content: end;
   text-align: center;
   margin-top: 50px;
-  color: rgb(46, 48, 48);
+  color: rgb(60, 61, 61);
 }
 body #player .show-area .show .lyrics p {
   font-size: 16px;
@@ -152,7 +152,6 @@ body #player .show-area .show .lyrics p {
 }
 body #player .show-area .show .lyrics .current {
   color: rgb(255, 255, 255);
-  font-size: 17px;
 }
 body #player .show-area .show-lyrics {
   display: flex;
@@ -163,15 +162,15 @@ body #player .show-area .show-lyrics {
   overflow: hidden;
 }
 body #player .show-area .show-lyrics .container {
-  transition: all 0.4s;
+  transition: all 0.6s;
 }
 body #player .show-area .show-lyrics .container p {
   font-size: 16px;
   margin: 10px;
+  color: rgb(60, 61, 61);
 }
 body #player .show-area .show-lyrics .container .current {
   color: rgb(255, 255, 255);
-  font-size: 17px;
 }
 body #player .Nav-bar {
   margin-bottom: 10px;
