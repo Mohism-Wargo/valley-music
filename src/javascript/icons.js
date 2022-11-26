@@ -36,13 +36,6 @@ svgPlaceholder.innerHTML = `
         <circle fill="#f5f5f5" r="3" cy="24" cx="24" data-follow-fill="#f5f5f5" />
         <circle fill="#f5f5f5" r="3" cy="24" cx="34" data-follow-fill="#f5f5f5" />
     </symbol>
-    <symbol id="play-once-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
-        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
-            d="M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28"
-            data-follow-stroke="#f5f5f5" />
-        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
-            d="m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5" data-follow-stroke="#f5f5f5" />
-    </symbol>
     <symbol id="pre-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
         <path stroke-linejoin="round" stroke-width="4" stroke="#f5f5f5"
             d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z" data-follow-stroke="#f5f5f5" />
@@ -70,6 +63,28 @@ svgPlaceholder.innerHTML = `
             d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z" data-follow-stroke="#f5f5f5" />
         <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5" d="M19 18v12M29 18v12"
             data-follow-stroke="#f5f5f5" />
+    </symbol>
+    <symbol id="order-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
+            d="M4 25c0-6.65 5.396-12 12-12h28" data-follow-stroke="#f5f5f5" />
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
+            d="m38 7 6 6-6 6M44 23c0 6.65-5.396 12-12 12H4" data-follow-stroke="#f5f5f5" />
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5" d="m10 41-6-6 6-6"
+            data-follow-stroke="#f5f5f5" />
+    </symbol>
+    <symbol id="unordered-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
+            d="m40 33 4 4-4 4M40 7l4 4-4 4" data-follow-stroke="#f5f5f5" />
+        <path stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
+            d="M44 11h-7c-7.18 0-13 5.82-13 13s5.82 13 13 13h7M4 37h7c7.18 0 13-5.82 13-13s-5.82-13-13-13H4"
+            data-follow-stroke="#f5f5f5" />
+    </symbol>
+    <symbol id="loop-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
+            d="M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28"
+            data-follow-stroke="#f5f5f5" />
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
+            d="m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5" data-follow-stroke="#f5f5f5" />
     </symbol>
 </svg>
 `

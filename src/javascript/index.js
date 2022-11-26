@@ -51,6 +51,34 @@ class Player {
             self.loadSong()
             self.playSong()
         }
+        this.$('.btn-play-mode').onclick = function () {
+            if (this.classList.contains('order')) {
+                this.classList.remove('order')
+                this.classList.add('unordered')
+                this.querySelector('use').setAttribute('xlink:href', '#unordered-icon')
+            } else if (this.classList.contains('unordered')) {
+                this.classList.remove('unordered')
+                this.classList.add('loop')
+                this.querySelector('use').setAttribute('xlink:href', '#loop-icon')
+            } else if (this.classList.contains('loop')) {
+                this.classList.remove('loop')
+                this.classList.add('order')
+                this.querySelector('use').setAttribute('xlink:href', '#order-icon')
+            }
+        }
+        this.audio.addEventListener('ended', () => {
+            if (self.$('btn-play-mode').classList.contains('order')) {
+                self.audio.currentIndex++
+                self.playSong()
+            } else if (self.$('btn-play-mode').classList.contains('unordered')) {
+                self.audio.currentIndex = Math.floor(Math.random() * lyricsArr.length + 1)
+                self.playSong()
+            } else if (self.$('btn-play-mode').classList.contains('loop')) {
+                self.audio.currentTime = 0
+                self.playSong()
+            }
+            console.log(self.audio.currentIndex)
+        })
         this.audio.ontimeupdate = function () {
             self.locateLyric()
             self.setProgressBar()
@@ -80,6 +108,13 @@ class Player {
         this.audio.oncanplaythrough = () => this.audio.play()
     }
 
+    // playSongMode() {
+    //     this.$('.btn-play-mode').addAttrListener('class', 'order') = function () {
+    //         if (this.audio.ended === true) {
+    //             this.audio.currentIndex++
+    //         }
+    //     }
+    // }
     loadLyrics() {
         fetch(this.songList[this.currentIndex].lyric)
             .then(res => res.json())
@@ -90,6 +125,7 @@ class Player {
             })
     }
     locateLyric() {
+        if (this.lyricIndex === this.lyricsArr.length - 1) return
         let currentTime = this.audio.currentTime * 1000
         let nextLineTime = this.lyricsArr[this.lyricIndex + 1][0]
         if (currentTime > nextLineTime && this.lyricIndex < this.lyricsArr.length - 1) {
@@ -145,8 +181,6 @@ class Player {
     setProgressBar() {
         let percent = (this.audio.currentTime / this.audio.duration) * 100 + '%'
         this.$('.bar .progress').style.width = percent
-        console.log(this.audio.currentTime)
-        console.log(this.audio.ended)
         this.$('.time-start').innerText = this.formatTime(this.audio.currentTime)
     }
     formatTime(secondsTotal) {

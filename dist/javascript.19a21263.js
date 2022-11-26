@@ -124,7 +124,7 @@ svgPlaceholder.style.width = '0';
 svgPlaceholder.style.height = '0';
 svgPlaceholder.style.overflow = 'hidden';
 document.body.appendChild(svgPlaceholder);
-svgPlaceholder.innerHTML = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <symbol id=\"like-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n        d=\"M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z\"\n        data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"download-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 29 12 17h8V6h8v11h8L24 29Z\" clip-rule=\"evenodd\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M42 37H6M34 44H14\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"share-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M35 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM13 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m30 13.575-12.66 7.67M17.338 26.564l13.34 7.883\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M35 32a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"comment-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 6H4v30h9v5l10-5h21V6ZM14 21h20\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"more-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"14\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"34\" data-follow-fill=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-once-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28\"\n            data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pre-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m22 31-7-7 7-7M31 31l-7-7 7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M20 24v-6.928l6 3.464L32 24l-6 3.464-6 3.464V24Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"next-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m17 31 7-7-7-7M26 31l7-7-7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"list-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M7.95 11.95h32M7.95 23.95h32M7.95 35.95h32\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pause-icon\"\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M19 18v12M29 18v12\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n</svg>\n";
+svgPlaceholder.innerHTML = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <symbol id=\"like-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n        d=\"M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z\"\n        data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"download-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 29 12 17h8V6h8v11h8L24 29Z\" clip-rule=\"evenodd\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M42 37H6M34 44H14\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"share-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M35 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM13 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m30 13.575-12.66 7.67M17.338 26.564l13.34 7.883\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M35 32a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"comment-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 6H4v30h9v5l10-5h21V6ZM14 21h20\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"more-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"14\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"34\" data-follow-fill=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pre-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m22 31-7-7 7-7M31 31l-7-7 7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M20 24v-6.928l6 3.464L32 24l-6 3.464-6 3.464V24Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"next-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m17 31 7-7-7-7M26 31l7-7-7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"list-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M7.95 11.95h32M7.95 23.95h32M7.95 35.95h32\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pause-icon\"\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M19 18v12M29 18v12\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"order-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M4 25c0-6.65 5.396-12 12-12h28\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M44 23c0 6.65-5.396 12-12 12H4\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"m10 41-6-6 6-6\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"unordered-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m40 33 4 4-4 4M40 7l4 4-4 4\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 11h-7c-7.18 0-13 5.82-13 13s5.82 13 13 13h7M4 37h7c7.18 0 13-5.82 13-13s-5.82-13-13-13H4\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"loop-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28\"\n            data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n</svg>\n";
 },{}],"src/javascript/Swiper.js":[function(require,module,exports) {
 "use strict";
 
@@ -246,6 +246,34 @@ var Player = /*#__PURE__*/function () {
         self.loadSong();
         self.playSong();
       };
+      this.$('.btn-play-mode').onclick = function () {
+        if (this.classList.contains('order')) {
+          this.classList.remove('order');
+          this.classList.add('unordered');
+          this.querySelector('use').setAttribute('xlink:href', '#unordered-icon');
+        } else if (this.classList.contains('unordered')) {
+          this.classList.remove('unordered');
+          this.classList.add('loop');
+          this.querySelector('use').setAttribute('xlink:href', '#loop-icon');
+        } else if (this.classList.contains('loop')) {
+          this.classList.remove('loop');
+          this.classList.add('order');
+          this.querySelector('use').setAttribute('xlink:href', '#order-icon');
+        }
+      };
+      this.audio.addEventListener('ended', function () {
+        if (self.$('btn-play-mode').classList.contains('order')) {
+          self.audio.currentIndex++;
+          self.playSong();
+        } else if (self.$('btn-play-mode').classList.contains('unordered')) {
+          self.audio.currentIndex = Math.floor(Math.random() * lyricsArr.length + 1);
+          self.playSong();
+        } else if (self.$('btn-play-mode').classList.contains('loop')) {
+          self.audio.currentTime = 0;
+          self.playSong();
+        }
+        console.log(self.audio.currentIndex);
+      });
       this.audio.ontimeupdate = function () {
         self.locateLyric();
         self.setProgressBar();
@@ -281,6 +309,14 @@ var Player = /*#__PURE__*/function () {
         return _this4.audio.play();
       };
     }
+
+    // playSongMode() {
+    //     this.$('.btn-play-mode').addAttrListener('class', 'order') = function () {
+    //         if (this.audio.ended === true) {
+    //             this.audio.currentIndex++
+    //         }
+    //     }
+    // }
   }, {
     key: "loadLyrics",
     value: function loadLyrics() {
@@ -296,6 +332,7 @@ var Player = /*#__PURE__*/function () {
   }, {
     key: "locateLyric",
     value: function locateLyric() {
+      if (this.lyricIndex === this.lyricsArr.length - 1) return;
       var currentTime = this.audio.currentTime * 1000;
       var nextLineTime = this.lyricsArr[this.lyricIndex + 1][0];
       if (currentTime > nextLineTime && this.lyricIndex < this.lyricsArr.length - 1) {
@@ -357,8 +394,6 @@ var Player = /*#__PURE__*/function () {
     value: function setProgressBar() {
       var percent = this.audio.currentTime / this.audio.duration * 100 + '%';
       this.$('.bar .progress').style.width = percent;
-      console.log(this.audio.currentTime);
-      console.log(this.audio.ended);
       this.$('.time-start').innerText = this.formatTime(this.audio.currentTime);
     }
   }, {
@@ -399,7 +434,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58756" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49343" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
