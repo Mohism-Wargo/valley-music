@@ -262,17 +262,24 @@ var Player = /*#__PURE__*/function () {
         }
       };
       this.audio.addEventListener('ended', function () {
-        if (self.$('btn-play-mode').classList.contains('order')) {
-          self.audio.currentIndex++;
+        if (self.$('.btn-play-mode').classList.contains('order')) {
+          console.log(self.currentIndex);
+          console.log(self.songList.length);
+          if (self.currentIndex < self.songList.length - 1) {
+            self.currentIndex++;
+          } else {
+            self.currentIndex = 0;
+          }
+          self.loadSong();
           self.playSong();
-        } else if (self.$('btn-play-mode').classList.contains('unordered')) {
-          self.audio.currentIndex = Math.floor(Math.random() * lyricsArr.length + 1);
+        } else if (self.$('.btn-play-mode').classList.contains('unordered')) {
+          self.currentIndex = Math.floor(Math.random() * self.songList.length + 1);
+          self.loadSong();
           self.playSong();
-        } else if (self.$('btn-play-mode').classList.contains('loop')) {
+        } else if (self.$('.btn-play-mode').classList.contains('loop')) {
           self.audio.currentTime = 0;
           self.playSong();
         }
-        console.log(self.audio.currentIndex);
       });
       this.audio.ontimeupdate = function () {
         self.locateLyric();
@@ -309,14 +316,6 @@ var Player = /*#__PURE__*/function () {
         return _this4.audio.play();
       };
     }
-
-    // playSongMode() {
-    //     this.$('.btn-play-mode').addAttrListener('class', 'order') = function () {
-    //         if (this.audio.ended === true) {
-    //             this.audio.currentIndex++
-    //         }
-    //     }
-    // }
   }, {
     key: "loadLyrics",
     value: function loadLyrics() {
@@ -434,7 +433,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49343" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60090" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -67,17 +67,24 @@ class Player {
             }
         }
         this.audio.addEventListener('ended', () => {
-            if (self.$('btn-play-mode').classList.contains('order')) {
-                self.audio.currentIndex++
+            if (self.$('.btn-play-mode').classList.contains('order')) {
+                console.log(self.currentIndex)
+                console.log(self.songList.length)
+                if (self.currentIndex < self.songList.length - 1) {
+                    self.currentIndex++
+                } else {
+                    self.currentIndex = 0
+                }
+                self.loadSong()
                 self.playSong()
-            } else if (self.$('btn-play-mode').classList.contains('unordered')) {
-                self.audio.currentIndex = Math.floor(Math.random() * lyricsArr.length + 1)
+            } else if (self.$('.btn-play-mode').classList.contains('unordered')) {
+                self.currentIndex = Math.floor(Math.random() * self.songList.length + 1)
+                self.loadSong()
                 self.playSong()
-            } else if (self.$('btn-play-mode').classList.contains('loop')) {
+            } else if (self.$('.btn-play-mode').classList.contains('loop')) {
                 self.audio.currentTime = 0
                 self.playSong()
             }
-            console.log(self.audio.currentIndex)
         })
         this.audio.ontimeupdate = function () {
             self.locateLyric()
@@ -94,6 +101,7 @@ class Player {
             this.classList.add('home')
         })
     }
+
     loadSong() {
         let songObj = this.songList[this.currentIndex]
         this.$('.header h1').innerText = songObj.title
@@ -108,13 +116,6 @@ class Player {
         this.audio.oncanplaythrough = () => this.audio.play()
     }
 
-    // playSongMode() {
-    //     this.$('.btn-play-mode').addAttrListener('class', 'order') = function () {
-    //         if (this.audio.ended === true) {
-    //             this.audio.currentIndex++
-    //         }
-    //     }
-    // }
     loadLyrics() {
         fetch(this.songList[this.currentIndex].lyric)
             .then(res => res.json())
@@ -124,6 +125,7 @@ class Player {
                 window.lyrics = data.lrc.lyric
             })
     }
+
     locateLyric() {
         if (this.lyricIndex === this.lyricsArr.length - 1) return
         let currentTime = this.audio.currentTime * 1000
