@@ -109,8 +109,18 @@ body {
                         border: 6px solid transparent;
                         border-top-color: #a0eaf0;
                         border-left-color: #a0eaf0;
-                        /* 执行动画：动画名 时长 线性的 无限次播放 */
-                        animation: spin 2.2s linear infinite;
+
+                        & .show-area .home {
+                            /* 执行动画：动画名 时长 线性的 无限次播放 */
+                            animation: spin 2.2s linear infinite;
+                            animation-play-state: paused;
+                        }
+
+                        & running {
+                            /* 执行动画：动画名 时长 线性的 无限次播放 */
+                            animation: spin 2.2s linear infinite;
+                            animation-play-state: running;
+                        }
 
                         .center {
                             font-size: 17px;
@@ -138,8 +148,18 @@ body {
                         border-radius: 50%;
                         border: 5px solid transparent;
                         border-bottom-color: #a8d5e7;
-                        /* 执行动画：动画名 时长 线性的 无限次播放 */
-                        animation: spin 2.6s linear infinite;
+
+                        & paused {
+                            /* 执行动画：动画名 时长 线性的 无限次播放 */
+                            animation: spin 2.2s linear infinite;
+                            animation-play-state: paused;
+                        }
+
+                        & running {
+                            /* 执行动画：动画名 时长 线性的 无限次播放 */
+                            animation: spin 2.2s linear infinite;
+                            animation-play-state: running;
+                        }
                     }
 
                     .frame::after {
@@ -152,8 +172,18 @@ body {
                         border-radius: 50%;
                         border: 4px solid transparent;
                         border-right-color: #f0eeee;
-                        /* 执行动画：动画名 时长 线性的 无限次播放 */
-                        animation: spin 3.2s linear infinite;
+
+                        & paused {
+                            /* 执行动画：动画名 时长 线性的 无限次播放 */
+                            animation: spin 2.2s linear infinite;
+                            animation-play-state: paused;
+                        }
+
+                        & running {
+                            /* 执行动画：动画名 时长 线性的 无限次播放 */
+                            animation: spin 2.2s linear infinite;
+                            animation-play-state: running;
+                        }
                     }
                 }
 

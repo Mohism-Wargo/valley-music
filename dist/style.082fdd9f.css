@@ -95,8 +95,16 @@ body #player .show-area .show .animation .frame {
   border: 6px solid transparent;
   border-top-color: #a0eaf0;
   border-left-color: #a0eaf0;
+}
+body #player .show-area .show .animation .frame .show-area .home {
   /* 执行动画：动画名 时长 线性的 无限次播放 */
   animation: spin 2.2s linear infinite;
+  animation-play-state: paused;
+}
+body #player .show-area .show .animation .frame running {
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.2s linear infinite;
+  animation-play-state: running;
 }
 body #player .show-area .show .animation .frame .center {
   font-size: 17px;
@@ -122,8 +130,16 @@ body #player .show-area .show .animation .frame::before {
   border-radius: 50%;
   border: 5px solid transparent;
   border-bottom-color: #a8d5e7;
+}
+body #player .show-area .show .animation .frame::before paused {
   /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2.6s linear infinite;
+  animation: spin 2.2s linear infinite;
+  animation-play-state: paused;
+}
+body #player .show-area .show .animation .frame::before running {
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.2s linear infinite;
+  animation-play-state: running;
 }
 body #player .show-area .show .animation .frame::after {
   content: "";
@@ -135,8 +151,16 @@ body #player .show-area .show .animation .frame::after {
   border-radius: 50%;
   border: 4px solid transparent;
   border-right-color: #f0eeee;
+}
+body #player .show-area .show .animation .frame::after paused {
   /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 3.2s linear infinite;
+  animation: spin 2.2s linear infinite;
+  animation-play-state: paused;
+}
+body #player .show-area .show .animation .frame::after running {
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.2s linear infinite;
+  animation-play-state: running;
 }
 body #player .show-area .show .lyrics {
   display: flex;

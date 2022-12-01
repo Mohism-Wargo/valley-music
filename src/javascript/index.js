@@ -1,6 +1,9 @@
 import './icons'
 import Swiper from './Swiper.js'
 
+// 可选的播放模式
+const avaliablePlayModeList = ['order', 'unordered', 'loop']
+
 class Player {
     constructor(node) {
         this.root = typeof node === 'string' ? document.querySelector(node) : node
@@ -12,9 +15,44 @@ class Player {
         this.lyricsArr = []
         this.lyricIndex = -1
 
+        this.setUpPlayMode()
         this.start()
         this.bind()
+        // this.animationPlayState()
         // https://mohism-wargo.github.io/Simulate-data/music-list.json
+    }
+
+    // 设置模式按钮的UI
+    setPlayModeButton() {
+        const button = this.$('.btn-play-mode')
+        button.classList = []
+        button.classList.add('btn-play-mode')
+        button.classList.add(this.playMode)
+        button.querySelector('use').setAttribute('xlink:href', `#${this.playMode}-icon`)
+    }
+    // 初始化播放模式
+    setUpPlayMode() {
+        // 从本地读取模式
+        const modeFromStore = window.localStorage.getItem('playMode')
+        // 校验
+        if (avaliablePlayModeList.includes(modeFromStore)) {
+            this.playMode = modeFromStore
+        } else {
+            // 不是有效的就使用默认模式
+            this.playMode = avaliablePlayModeList[0]
+        }
+        this.setPlayModeButton()
+    }
+
+    // 切换模式
+    changePlayMode() {
+        // 按顺序切换模式
+        const nextPlayModeIndex = (avaliablePlayModeList.indexOf(this.playMode) + 1) % avaliablePlayModeList.length
+        this.playMode = avaliablePlayModeList[nextPlayModeIndex]
+        // 记录到本地
+        window.localStorage.setItem('playMode', this.playMode)
+        // 设置ui
+        this.setPlayModeButton()
     }
     start() {
         fetch('https://mohism-wargo.github.io/Simulate-data/music-list.json')
@@ -30,62 +68,29 @@ class Player {
         this.$('.btn-play').onclick = function () {
             if (this.classList.contains('pause')) {
                 self.audio.play()
+                self.animationPlayState()
                 this.classList.remove('pause')
                 this.classList.add('playing')
                 this.querySelector('use').setAttribute('xlink:href', '#pause-icon')
             } else if (this.classList.contains('playing')) {
                 self.audio.pause()
+                self.animationPlayState()
                 this.classList.remove('playing')
                 this.classList.add('pause')
                 this.querySelector('use').setAttribute('xlink:href', '#play-icon')
             }
         }
 
-        this.$('.btn-pre').onclick = function () {
-            self.currentIndex = (self.songList.length + self.currentIndex - 1) % self.songList.length
-            self.loadSong()
-            self.playSong()
-        }
-        this.$('.btn-next').onclick = function () {
-            self.currentIndex = (self.currentIndex + 1) % self.songList.length
-            self.loadSong()
-            self.playSong()
-        }
-        this.$('.btn-play-mode').onclick = function () {
-            if (this.classList.contains('order')) {
-                this.classList.remove('order')
-                this.classList.add('unordered')
-                this.querySelector('use').setAttribute('xlink:href', '#unordered-icon')
-            } else if (this.classList.contains('unordered')) {
-                this.classList.remove('unordered')
-                this.classList.add('loop')
-                this.querySelector('use').setAttribute('xlink:href', '#loop-icon')
-            } else if (this.classList.contains('loop')) {
-                this.classList.remove('loop')
-                this.classList.add('order')
-                this.querySelector('use').setAttribute('xlink:href', '#order-icon')
-            }
-        }
-        this.audio.addEventListener('ended', () => {
-            if (self.$('.btn-play-mode').classList.contains('order')) {
-                console.log(self.currentIndex)
-                console.log(self.songList.length)
-                if (self.currentIndex < self.songList.length - 1) {
-                    self.currentIndex++
-                } else {
-                    self.currentIndex = 0
-                }
-                self.loadSong()
-                self.playSong()
-            } else if (self.$('.btn-play-mode').classList.contains('unordered')) {
-                self.currentIndex = Math.floor(Math.random() * self.songList.length + 1)
-                self.loadSong()
-                self.playSong()
-            } else if (self.$('.btn-play-mode').classList.contains('loop')) {
-                self.audio.currentTime = 0
-                self.playSong()
-            }
-        })
+        // 统一播放上一首的逻辑
+        this.$('.btn-pre').onclick = this.preSong.bind(this)
+        this.audio.addEventListener('ended', this.preSong.bind(this))
+        this.$('.btn-play-mode').onclick = this.changePlayMode.bind(this)
+
+        // 统一播放下一首的逻辑
+        this.$('.btn-next').onclick = this.nextSong.bind(this)
+        this.audio.addEventListener('ended', this.nextSong.bind(this))
+        this.$('.btn-play-mode').onclick = this.changePlayMode.bind(this)
+
         this.audio.ontimeupdate = function () {
             self.locateLyric()
             self.setProgressBar()
@@ -100,6 +105,70 @@ class Player {
             this.classList.remove('all-lyrics')
             this.classList.add('home')
         })
+    }
+
+    // 播放上一首歌
+    preSong() {
+        // 根据不同的模式进行不同的处理
+        switch (this.playMode) {
+            case 'order': {
+                this.currentIndex = this.currentIndex = (this.songList.length + this.currentIndex - 1) % this.songList.length
+                this.loadSong()
+                break;
+            }
+            case 'unordered': {
+                this.currentIndex = Math.floor(Math.random() * this.songList.length)
+                console.log('当前歌曲的下标：', this.currentIndex)
+                this.loadSong()
+                break;
+            }
+            case 'loop': {
+                this.audio.currentTime = 0
+                break;
+            }
+            default: {
+                return console.error('不是有效的播放模式')
+            }
+        }
+        this.playSong()
+    }
+
+    // 播放下一首歌
+    nextSong() {
+        // 根据不同的模式进行不同的处理
+        switch (this.playMode) {
+            case 'order': {
+                this.currentIndex = (this.currentIndex + 1) % this.songList.length
+                this.loadSong()
+                break;
+            }
+            case 'unordered': {
+                this.currentIndex = Math.floor(Math.random() * this.songList.length)
+                this.loadSong()
+                break;
+            }
+            case 'loop': {
+                this.audio.currentTime = 0
+                break;
+            }
+            default: {
+                return console.error('不是有效的播放模式')
+            }
+        }
+        console.log('当前歌曲的下标：', this.currentIndex)
+        this.playSong()
+    }
+    //  动效播放的逻辑
+    animationPlayState() {
+        this.$('.frame').onclick = function () {
+            if (this.classList.contains('pause')) {
+                this.classList.remove('pause')
+                this.classList.add('running')
+            } else if (this.classList.contains('running')) {
+                this.classList.remove('running')
+                this.classList.add('pause')
+            }
+        }
     }
 
     loadSong() {
@@ -125,7 +194,6 @@ class Player {
                 window.lyrics = data.lrc.lyric
             })
     }
-
     locateLyric() {
         if (this.lyricIndex === this.lyricsArr.length - 1) return
         let currentTime = this.audio.currentTime * 1000
