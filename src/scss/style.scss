@@ -55,7 +55,7 @@ body {
                 display: flex;
                 align-items: center;
                 border: 1px solid rgba(240, 239, 239, 0.6);
-                background-color: rgb(184, 185, 185, 0.3);
+                background-color: rgba(184, 185, 185, 0.3);
                 border-radius: 4px;
                 width: 64px;
                 height: 7px;
@@ -109,17 +109,14 @@ body {
                         border: 6px solid transparent;
                         border-top-color: #a0eaf0;
                         border-left-color: #a0eaf0;
-
-                        & .show-area .home {
-                            /* 执行动画：动画名 时长 线性的 无限次播放 */
-                            animation: spin 2.2s linear infinite;
-                            animation-play-state: paused;
+                        /* 执行动画：动画名 时长 线性的 无限次播放 */
+                        animation: spin 2.2s linear infinite;
+                        &.paused {
+                          animation-play-state: paused;
                         }
 
-                        & running {
-                            /* 执行动画：动画名 时长 线性的 无限次播放 */
-                            animation: spin 2.2s linear infinite;
-                            animation-play-state: running;
+                        &.running {
+                          animation-play-state: running;
                         }
 
                         .center {
