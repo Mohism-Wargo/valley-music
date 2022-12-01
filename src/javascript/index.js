@@ -68,13 +68,13 @@ class Player {
         this.$('.btn-play').onclick = function () {
             if (this.classList.contains('pause')) {
                 self.audio.play()
-                self.animationPlayState()
+                self.animationPlayState.call(self)
                 this.classList.remove('pause')
                 this.classList.add('playing')
                 this.querySelector('use').setAttribute('xlink:href', '#pause-icon')
             } else if (this.classList.contains('playing')) {
                 self.audio.pause()
-                self.animationPlayState()
+                self.animationPlayState.call(self)
                 this.classList.remove('playing')
                 this.classList.add('pause')
                 this.querySelector('use').setAttribute('xlink:href', '#play-icon')
@@ -160,15 +160,14 @@ class Player {
     }
     //  动效播放的逻辑
     animationPlayState() {
-        this.$('.frame').onclick = function () {
-            if (this.classList.contains('pause')) {
-                this.classList.remove('pause')
-                this.classList.add('running')
-            } else if (this.classList.contains('running')) {
-                this.classList.remove('running')
-                this.classList.add('pause')
-            }
-        }
+      const frame = this.$('.frame')
+      if (frame.classList.contains('pause')) {
+          frame.classList.remove('pause')
+          frame.classList.add('running')
+      } else if (frame.classList.contains('running')) {
+          frame.classList.remove('running')
+          frame.classList.add('pause')
+      }
     }
 
     loadSong() {
