@@ -18,7 +18,6 @@ class Player {
         this.setUpPlayMode()
         this.start()
         this.bind()
-        // this.animationPlayState()
         // https://mohism-wargo.github.io/Simulate-data/music-list.json
     }
 
@@ -61,6 +60,7 @@ class Player {
                 console.log(data)
                 this.songList = data
                 this.loadSong()
+                this.showPlayList()
             })
     }
     bind() {
@@ -68,25 +68,28 @@ class Player {
         this.$('.btn-play').onclick = function () {
             if (this.classList.contains('pause')) {
                 self.audio.play()
-                self.animationPlayState()
+                self.animationPlayState.call(self)
                 this.classList.remove('pause')
                 this.classList.add('playing')
                 this.querySelector('use').setAttribute('xlink:href', '#pause-icon')
             } else if (this.classList.contains('playing')) {
                 self.audio.pause()
-                self.animationPlayState()
+                self.animationPlayState.call(self)
                 this.classList.remove('playing')
                 this.classList.add('pause')
                 this.querySelector('use').setAttribute('xlink:href', '#play-icon')
             }
         }
 
-        // 统一播放上一首的逻辑
-        this.$('.btn-pre').onclick = this.preSong.bind(this)
-        this.audio.addEventListener('ended', this.preSong.bind(this))
-        this.$('.btn-play-mode').onclick = this.changePlayMode.bind(this)
+        // 统一展示播放列表的逻辑
+        this.$('.btn-list').onclick = this.showList.bind(this)
+        this.$('.hidden').onclick = this.hideList.bind(this)
 
-        // 统一播放下一首的逻辑
+        // 列表音乐播放的逻辑
+        // this.$('.list').onclick = this.listMusicPlay.bind(this)
+
+        // 统一播放上下一首的逻辑
+        this.$('.btn-pre').onclick = this.preSong.bind(this)
         this.$('.btn-next').onclick = this.nextSong.bind(this)
         this.audio.addEventListener('ended', this.nextSong.bind(this))
         this.$('.btn-play-mode').onclick = this.changePlayMode.bind(this)
@@ -112,7 +115,11 @@ class Player {
         // 根据不同的模式进行不同的处理
         switch (this.playMode) {
             case 'order': {
-                this.currentIndex = this.currentIndex = (this.songList.length + this.currentIndex - 1) % this.songList.length
+                if (this.currentIndex !== 0) {
+                    this.currentIndex = (this.currentIndex - 1) % this.songList.length
+                } else if (this.currentIndex === 0) {
+                    this.currentIndex = this.songList.length - 1
+                }
                 this.loadSong()
                 break;
             }
@@ -131,6 +138,8 @@ class Player {
             }
         }
         this.playSong()
+        this.playIcon()
+        this.animation()
     }
 
     // 播放下一首歌
@@ -139,6 +148,7 @@ class Player {
         switch (this.playMode) {
             case 'order': {
                 this.currentIndex = (this.currentIndex + 1) % this.songList.length
+                // console.log("余数:", this.currentIndex)
                 this.loadSong()
                 break;
             }
@@ -157,19 +167,76 @@ class Player {
         }
         console.log('当前歌曲的下标：', this.currentIndex)
         this.playSong()
+        this.playIcon()
+        this.animation()
+    }
+    // 切歌时播放UI变化
+    playIcon() {
+        const btnPlay = this.$('.btn-play')
+        if (btnPlay.classList.contains('pause')) {
+            btnPlay.classList.remove('pause')
+            btnPlay.classList.add('playing')
+            btnPlay.querySelector('use').setAttribute('xlink:href', '#pause-icon')
+        }
     }
     //  动效播放的逻辑
     animationPlayState() {
-        this.$('.frame').onclick = function () {
-            if (this.classList.contains('pause')) {
-                this.classList.remove('pause')
-                this.classList.add('running')
-            } else if (this.classList.contains('running')) {
-                this.classList.remove('running')
-                this.classList.add('pause')
-            }
+        const frame = this.$('.frame')
+        if (frame.classList.contains('pause')) {
+            frame.classList.remove('pause')
+            frame.classList.add('running')
+        } else if (frame.classList.contains('running')) {
+            frame.classList.remove('running')
+            frame.classList.add('pause')
         }
     }
+    //  切歌时动效播放的逻辑
+    animation() {
+        const frame = this.$('.frame')
+        if (frame.classList.contains('pause')) {
+            frame.classList.remove('pause')
+            frame.classList.add('running')
+        }
+    }
+
+    //  播放列表的展示与隐藏
+    showList() {
+        const playBox = this.$('.playBox')
+        if (playBox.classList.contains('hide')) {
+            playBox.classList.remove('hide')
+            playBox.classList.add('display')
+        }
+    }
+    hideList() {
+        const playBox = this.$('.playBox')
+        if (playBox.classList.contains('display')) {
+            playBox.classList.remove('display')
+            playBox.classList.add('hide')
+        }
+    }
+    showPlayList() {
+        let Arr = this.songList
+        let fragment = document.createDocumentFragment()
+        // const list = Arr.map(item => {
+        //     return {
+        //         id: item.id,
+        //         title: item.title,
+        //         author: item.author
+        //     }
+        // })
+        // console.log(list)
+        Arr.forEach(Arr => {
+            let node = document.createElement('p')
+            let span = document.createElement('span')
+            node.innerText = Arr.title
+            span.innerText = ' - ' + Arr.author
+            node.appendChild(span)
+            fragment.appendChild(node)
+        })
+        this.$('.playList .list').innerHTML = ''
+        this.$('.playList .list').appendChild(fragment)
+    }
+    //  播放列表的展示与隐藏 ^
 
     loadSong() {
         let songObj = this.songList[this.currentIndex]

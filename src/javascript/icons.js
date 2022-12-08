@@ -86,5 +86,9 @@ svgPlaceholder.innerHTML = `
         <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#f5f5f5"
             d="m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5" data-follow-stroke="#f5f5f5" />
     </symbol>
+    <symbol id="hidden-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48">
+        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="4" stroke="#73A4B9"
+            d="M36 12 24 24 12 12M36 24 24 36 12 24" data-follow-stroke="#73A4B9" />
+    </symbol>  
 </svg>
 `

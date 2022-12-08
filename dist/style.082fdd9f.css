@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 html {
   height: 100%;
 }
@@ -41,6 +48,10 @@ body #player .header .singer {
   color: rgb(228, 239, 245);
   text-align: center;
   font-size: 16px;
+  width: 360px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 body #player .header .slide {
   display: flex;
@@ -95,15 +106,13 @@ body #player .show-area .show .animation .frame {
   border: 6px solid transparent;
   border-top-color: #a0eaf0;
   border-left-color: #a0eaf0;
-}
-body #player .show-area .show .animation .frame .show-area .home {
   /* 执行动画：动画名 时长 线性的 无限次播放 */
   animation: spin 2.2s linear infinite;
+}
+body #player .show-area .show .animation .frame.pause, body #player .show-area .show .animation .frame.pause::before, body #player .show-area .show .animation .frame.pause::after {
   animation-play-state: paused;
 }
-body #player .show-area .show .animation .frame running {
-  /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2.2s linear infinite;
+body #player .show-area .show .animation .frame.running, body #player .show-area .show .animation .frame.running::before, body #player .show-area .show .animation .frame.running::after {
   animation-play-state: running;
 }
 body #player .show-area .show .animation .frame .center {
@@ -130,16 +139,8 @@ body #player .show-area .show .animation .frame::before {
   border-radius: 50%;
   border: 5px solid transparent;
   border-bottom-color: #a8d5e7;
-}
-body #player .show-area .show .animation .frame::before paused {
   /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2.2s linear infinite;
-  animation-play-state: paused;
-}
-body #player .show-area .show .animation .frame::before running {
-  /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2.2s linear infinite;
-  animation-play-state: running;
+  animation: spin 2.6s linear infinite;
 }
 body #player .show-area .show .animation .frame::after {
   content: "";
@@ -151,16 +152,8 @@ body #player .show-area .show .animation .frame::after {
   border-radius: 50%;
   border: 4px solid transparent;
   border-right-color: #f0eeee;
-}
-body #player .show-area .show .animation .frame::after paused {
   /* 执行动画：动画名 时长 线性的 无限次播放 */
   animation: spin 2.2s linear infinite;
-  animation-play-state: paused;
-}
-body #player .show-area .show .animation .frame::after running {
-  /* 执行动画：动画名 时长 线性的 无限次播放 */
-  animation: spin 2.2s linear infinite;
-  animation-play-state: running;
 }
 body #player .show-area .show .lyrics {
   display: flex;
@@ -258,6 +251,71 @@ body #player .Nav-bar .actions .btn-play {
   width: 52px;
   height: 52px;
   opacity: 1;
+}
+body #player .playBox {
+  background: rgba(100, 100, 100, 0.4);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+body #player .playBox.hide {
+  display: none;
+}
+body #player .playBox.display {
+  display: block;
+}
+body #player .playBox .playList {
+  background-color: rgb(228, 239, 245);
+  position: fixed;
+  border-radius: 15px 15px 0 0;
+  bottom: 0;
+  width: 100%;
+  height: 52%;
+}
+body #player .playBox .playList .head {
+  display: flex;
+  border-bottom: 1px solid rgba(177, 177, 177, 0.2);
+  align-items: center;
+  text-align: center;
+}
+body #player .playBox .playList .head p {
+  flex: 1;
+  color: rgb(85, 131, 151);
+  font-size: 18px;
+  margin: 4px 0px 4px 42px;
+}
+body #player .playBox .playList .head svg {
+  width: 42px;
+  height: 26px;
+  margin: 4px;
+}
+body #player .playBox .playList .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body #player .playBox .playList .list p {
+  border-bottom: 1px solid rgba(177, 177, 177, 0.2);
+  color: rgb(40, 40, 40);
+  font-size: 15px;
+  padding: 8px 0 8px 22px;
+  width: 100vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body #player .playBox .playList .list p span {
+  color: rgb(106, 110, 110);
+  font-size: 14px;
+}
+body #player .playBox .playList .list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 
 @keyframes spin {

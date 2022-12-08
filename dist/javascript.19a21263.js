@@ -124,7 +124,7 @@ svgPlaceholder.style.width = '0';
 svgPlaceholder.style.height = '0';
 svgPlaceholder.style.overflow = 'hidden';
 document.body.appendChild(svgPlaceholder);
-svgPlaceholder.innerHTML = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <symbol id=\"like-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n        d=\"M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z\"\n        data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"download-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 29 12 17h8V6h8v11h8L24 29Z\" clip-rule=\"evenodd\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M42 37H6M34 44H14\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"share-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M35 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM13 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m30 13.575-12.66 7.67M17.338 26.564l13.34 7.883\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M35 32a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"comment-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 6H4v30h9v5l10-5h21V6ZM14 21h20\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"more-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"14\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"34\" data-follow-fill=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pre-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m22 31-7-7 7-7M31 31l-7-7 7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M20 24v-6.928l6 3.464L32 24l-6 3.464-6 3.464V24Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"next-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m17 31 7-7-7-7M26 31l7-7-7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"list-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M7.95 11.95h32M7.95 23.95h32M7.95 35.95h32\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pause-icon\"\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M19 18v12M29 18v12\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"order-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M4 25c0-6.65 5.396-12 12-12h28\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M44 23c0 6.65-5.396 12-12 12H4\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"m10 41-6-6 6-6\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"unordered-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m40 33 4 4-4 4M40 7l4 4-4 4\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 11h-7c-7.18 0-13 5.82-13 13s5.82 13 13 13h7M4 37h7c7.18 0 13-5.82 13-13s-5.82-13-13-13H4\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"loop-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28\"\n            data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n</svg>\n";
+svgPlaceholder.innerHTML = "\n<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <symbol id=\"like-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n    <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n        d=\"M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z\"\n        data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"download-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 29 12 17h8V6h8v11h8L24 29Z\" clip-rule=\"evenodd\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M42 37H6M34 44H14\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"share-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M35 16a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM13 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m30 13.575-12.66 7.67M17.338 26.564l13.34 7.883\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M35 32a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"comment-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 6H4v30h9v5l10-5h21V6ZM14 21h20\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"more-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"14\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"24\" data-follow-fill=\"#f5f5f5\" />\n        <circle fill=\"#f5f5f5\" r=\"3\" cy=\"24\" cx=\"34\" data-follow-fill=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pre-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m22 31-7-7 7-7M31 31l-7-7 7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"play-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M20 24v-6.928l6 3.464L32 24l-6 3.464-6 3.464V24Z\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"next-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m17 31 7-7-7-7M26 31l7-7-7-7\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"list-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M7.95 11.95h32M7.95 23.95h32M7.95 35.95h32\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"pause-icon\"\"  xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20Z\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"M19 18v12M29 18v12\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"order-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M4 25c0-6.65 5.396-12 12-12h28\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M44 23c0 6.65-5.396 12-12 12H4\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\" d=\"m10 41-6-6 6-6\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"unordered-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m40 33 4 4-4 4M40 7l4 4-4 4\" data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M44 11h-7c-7.18 0-13 5.82-13 13s5.82 13 13 13h7M4 37h7c7.18 0 13-5.82 13-13s-5.82-13-13-13H4\"\n            data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"loop-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"M43.823 25.23a13.965 13.965 0 0 1-2.837 6.448A13.975 13.975 0 0 1 30 37H16C9.397 37 4 31.678 4 25c0-6.65 5.396-12 12-12h28\"\n            data-follow-stroke=\"#f5f5f5\" />\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#f5f5f5\"\n            d=\"m38 7 6 6-6 6M24 19v12M24 19l-3 3-1.5 1.5\" data-follow-stroke=\"#f5f5f5\" />\n    </symbol>\n    <symbol id=\"hidden-icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 48 48\">\n        <path stroke-linejoin=\"round\" stroke-linecap=\"round\" stroke-width=\"4\" stroke=\"#73A4B9\"\n            d=\"M36 12 24 24 12 12M36 24 24 36 12 24\" data-follow-stroke=\"#73A4B9\" />\n    </symbol>  \n</svg>\n";
 },{}],"src/javascript/Swiper.js":[function(require,module,exports) {
 "use strict";
 
@@ -208,7 +208,6 @@ var Player = /*#__PURE__*/function () {
     this.setUpPlayMode();
     this.start();
     this.bind();
-    // this.animationPlayState()
     // https://mohism-wargo.github.io/Simulate-data/music-list.json
   }
 
@@ -260,6 +259,7 @@ var Player = /*#__PURE__*/function () {
         console.log(data);
         _this2.songList = data;
         _this2.loadSong();
+        _this2.showPlayList();
       });
     }
   }, {
@@ -269,25 +269,28 @@ var Player = /*#__PURE__*/function () {
       this.$('.btn-play').onclick = function () {
         if (this.classList.contains('pause')) {
           self.audio.play();
-          self.animationPlayState();
+          self.animationPlayState.call(self);
           this.classList.remove('pause');
           this.classList.add('playing');
           this.querySelector('use').setAttribute('xlink:href', '#pause-icon');
         } else if (this.classList.contains('playing')) {
           self.audio.pause();
-          self.animationPlayState();
+          self.animationPlayState.call(self);
           this.classList.remove('playing');
           this.classList.add('pause');
           this.querySelector('use').setAttribute('xlink:href', '#play-icon');
         }
       };
 
-      // 统一播放上一首的逻辑
-      this.$('.btn-pre').onclick = this.preSong.bind(this);
-      this.audio.addEventListener('ended', this.preSong.bind(this));
-      this.$('.btn-play-mode').onclick = this.changePlayMode.bind(this);
+      // 统一展示播放列表的逻辑
+      this.$('.btn-list').onclick = this.showList.bind(this);
+      this.$('.hidden').onclick = this.hideList.bind(this);
 
-      // 统一播放下一首的逻辑
+      // 列表音乐播放的逻辑
+      // this.$('.list').onclick = this.listMusicPlay.bind(this)
+
+      // 统一播放上下一首的逻辑
+      this.$('.btn-pre').onclick = this.preSong.bind(this);
       this.$('.btn-next').onclick = this.nextSong.bind(this);
       this.audio.addEventListener('ended', this.nextSong.bind(this));
       this.$('.btn-play-mode').onclick = this.changePlayMode.bind(this);
@@ -314,7 +317,11 @@ var Player = /*#__PURE__*/function () {
       switch (this.playMode) {
         case 'order':
           {
-            this.currentIndex = this.currentIndex = (this.songList.length + this.currentIndex - 1) % this.songList.length;
+            if (this.currentIndex !== 0) {
+              this.currentIndex = (this.currentIndex - 1) % this.songList.length;
+            } else if (this.currentIndex === 0) {
+              this.currentIndex = this.songList.length - 1;
+            }
             this.loadSong();
             break;
           }
@@ -336,6 +343,8 @@ var Player = /*#__PURE__*/function () {
           }
       }
       this.playSong();
+      this.playIcon();
+      this.animation();
     }
 
     // 播放下一首歌
@@ -347,6 +356,7 @@ var Player = /*#__PURE__*/function () {
         case 'order':
           {
             this.currentIndex = (this.currentIndex + 1) % this.songList.length;
+            // console.log("余数:", this.currentIndex)
             this.loadSong();
             break;
           }
@@ -368,19 +378,88 @@ var Player = /*#__PURE__*/function () {
       }
       console.log('当前歌曲的下标：', this.currentIndex);
       this.playSong();
+      this.playIcon();
+      this.animation();
+    }
+    // 切歌时播放UI变化
+  }, {
+    key: "playIcon",
+    value: function playIcon() {
+      var btnPlay = this.$('.btn-play');
+      if (btnPlay.classList.contains('pause')) {
+        btnPlay.classList.remove('pause');
+        btnPlay.classList.add('playing');
+        btnPlay.querySelector('use').setAttribute('xlink:href', '#pause-icon');
+      }
     }
     //  动效播放的逻辑
   }, {
     key: "animationPlayState",
     value: function animationPlayState() {
-      if (this.classList.contains('pause')) {
-        this.classList.remove('pause');
-        this.classList.add('running');
-      } else if (this.classList.contains('running')) {
-        this.classList.remove('running');
-        this.classList.add('pause');
+      var frame = this.$('.frame');
+      if (frame.classList.contains('pause')) {
+        frame.classList.remove('pause');
+        frame.classList.add('running');
+      } else if (frame.classList.contains('running')) {
+        frame.classList.remove('running');
+        frame.classList.add('pause');
       }
     }
+    //  切歌时动效播放的逻辑
+  }, {
+    key: "animation",
+    value: function animation() {
+      var frame = this.$('.frame');
+      if (frame.classList.contains('pause')) {
+        frame.classList.remove('pause');
+        frame.classList.add('running');
+      }
+    }
+
+    //  播放列表的展示与隐藏
+  }, {
+    key: "showList",
+    value: function showList() {
+      var playBox = this.$('.playBox');
+      if (playBox.classList.contains('hide')) {
+        playBox.classList.remove('hide');
+        playBox.classList.add('display');
+      }
+    }
+  }, {
+    key: "hideList",
+    value: function hideList() {
+      var playBox = this.$('.playBox');
+      if (playBox.classList.contains('display')) {
+        playBox.classList.remove('display');
+        playBox.classList.add('hide');
+      }
+    }
+  }, {
+    key: "showPlayList",
+    value: function showPlayList() {
+      var Arr = this.songList;
+      var fragment = document.createDocumentFragment();
+      // const list = Arr.map(item => {
+      //     return {
+      //         id: item.id,
+      //         title: item.title,
+      //         author: item.author
+      //     }
+      // })
+      // console.log(list)
+      Arr.forEach(function (Arr) {
+        var node = document.createElement('p');
+        var span = document.createElement('span');
+        node.innerText = Arr.title;
+        span.innerText = ' - ' + Arr.author;
+        node.appendChild(span);
+        fragment.appendChild(node);
+      });
+      this.$('.playList .list').innerHTML = '';
+      this.$('.playList .list').appendChild(fragment);
+    }
+    //  播放列表的展示与隐藏 ^
   }, {
     key: "loadSong",
     value: function loadSong() {
@@ -519,7 +598,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52945" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55799" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
