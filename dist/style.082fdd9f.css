@@ -59,17 +59,22 @@ body #player .header .slide {
   border: 1px solid rgba(240, 239, 239, 0.6);
   background-color: rgba(184, 185, 185, 0.3);
   border-radius: 4px;
-  width: 64px;
+  width: 47px;
   height: 7px;
   margin-top: 8px;
   margin-bottom: 20px;
 }
 body #player .header .slide .current {
-  margin-left: 1px;
   border-radius: 3px;
   background-color: rgb(255, 255, 255);
-  width: 28px;
+  width: 21px;
   height: 3px;
+}
+body #player .header .slide .current.left {
+  margin-left: 1px;
+}
+body #player .header .slide .current.right {
+  margin-left: 23px;
 }
 body #player .show-area {
   display: flex;
@@ -278,16 +283,16 @@ body #player .playBox .playList .head {
   align-items: center;
   text-align: center;
 }
-body #player .playBox .playList .head p {
+body #player .playBox .playList .head h6 {
   flex: 1;
   color: rgb(85, 131, 151);
   font-size: 18px;
-  margin: 4px 0px 4px 42px;
+  margin: 8px 0px 8px 42px;
 }
 body #player .playBox .playList .head svg {
   width: 42px;
   height: 26px;
-  margin: 4px;
+  margin: 8px;
 }
 body #player .playBox .playList .list {
   display: flex;
@@ -303,7 +308,7 @@ body #player .playBox .playList .list p {
   border-bottom: 1px solid rgba(177, 177, 177, 0.2);
   color: rgb(40, 40, 40);
   font-size: 15px;
-  padding: 8px 0 8px 22px;
+  padding: 10px 0 10px 22px;
   width: 100vw;
   white-space: nowrap;
   text-overflow: ellipsis;

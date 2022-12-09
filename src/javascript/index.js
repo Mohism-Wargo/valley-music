@@ -86,7 +86,17 @@ class Player {
         this.$('.hidden').onclick = this.hideList.bind(this)
 
         // 列表音乐播放的逻辑
-        // this.$('.list').onclick = this.listMusicPlay.bind(this)
+        this.$('.list').addEventListener('click', e => {
+            const t = e.target
+            if (t.tagName.toLowerCase() === 'p') {
+                this.currentIndex = t.dataset.index
+                this.hideList()
+                this.loadSong()
+                this.playSong()
+                this.playIcon()
+                this.animation()
+            }
+        })
 
         // 统一播放上下一首的逻辑
         this.$('.btn-pre').onclick = this.preSong.bind(this)
@@ -103,11 +113,28 @@ class Player {
         swiper.on('swipeLeft', function () {
             this.classList.remove('home')
             this.classList.add('all-lyrics')
+            self.slideRight.call(self)
         })
         swiper.on('swipeRight', function () {
             this.classList.remove('all-lyrics')
             this.classList.add('home')
+            self.slideLeft.call(self)
         })
+    }
+    slideRight() {
+        const capsule = this.$('.slide .current')
+        if (capsule.classList.contains('left')) {
+            capsule.classList.remove('left')
+            capsule.classList.add('right')
+        }
+    }
+
+    slideLeft() {
+        const capsule = this.$('.slide .current')
+        if (capsule.classList.contains('right')) {
+            capsule.classList.remove('right')
+            capsule.classList.add('left')
+        }
     }
 
     // 播放上一首歌
@@ -225,11 +252,12 @@ class Player {
         //     }
         // })
         // console.log(list)
-        Arr.forEach(Arr => {
+        Arr.forEach((arr, index) => {
             let node = document.createElement('p')
+            node.setAttribute('data-index', index)
             let span = document.createElement('span')
-            node.innerText = Arr.title
-            span.innerText = ' - ' + Arr.author
+            node.innerText = arr.title
+            span.innerText = ' - ' + arr.author
             node.appendChild(span)
             fragment.appendChild(node)
         })

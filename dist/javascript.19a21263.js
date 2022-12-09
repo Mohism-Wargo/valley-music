@@ -265,6 +265,7 @@ var Player = /*#__PURE__*/function () {
   }, {
     key: "bind",
     value: function bind() {
+      var _this3 = this;
       var self = this;
       this.$('.btn-play').onclick = function () {
         if (this.classList.contains('pause')) {
@@ -287,7 +288,17 @@ var Player = /*#__PURE__*/function () {
       this.$('.hidden').onclick = this.hideList.bind(this);
 
       // 列表音乐播放的逻辑
-      // this.$('.list').onclick = this.listMusicPlay.bind(this)
+      this.$('.list').addEventListener('click', function (e) {
+        var t = e.target;
+        if (t.tagName.toLowerCase() === 'p') {
+          _this3.currentIndex = t.dataset.index;
+          _this3.hideList();
+          _this3.loadSong();
+          _this3.playSong();
+          _this3.playIcon();
+          _this3.animation();
+        }
+      });
 
       // 统一播放上下一首的逻辑
       this.$('.btn-pre').onclick = this.preSong.bind(this);
@@ -302,11 +313,31 @@ var Player = /*#__PURE__*/function () {
       swiper.on('swipeLeft', function () {
         this.classList.remove('home');
         this.classList.add('all-lyrics');
+        self.slideRight.call(self);
       });
       swiper.on('swipeRight', function () {
         this.classList.remove('all-lyrics');
         this.classList.add('home');
+        self.slideLeft.call(self);
       });
+    }
+  }, {
+    key: "slideRight",
+    value: function slideRight() {
+      var capsule = this.$('.slide .current');
+      if (capsule.classList.contains('left')) {
+        capsule.classList.remove('left');
+        capsule.classList.add('right');
+      }
+    }
+  }, {
+    key: "slideLeft",
+    value: function slideLeft() {
+      var capsule = this.$('.slide .current');
+      if (capsule.classList.contains('right')) {
+        capsule.classList.remove('right');
+        capsule.classList.add('left');
+      }
     }
 
     // 播放上一首歌
@@ -448,11 +479,12 @@ var Player = /*#__PURE__*/function () {
       //     }
       // })
       // console.log(list)
-      Arr.forEach(function (Arr) {
+      Arr.forEach(function (arr, index) {
         var node = document.createElement('p');
+        node.setAttribute('data-index', index);
         var span = document.createElement('span');
-        node.innerText = Arr.title;
-        span.innerText = ' - ' + Arr.author;
+        node.innerText = arr.title;
+        span.innerText = ' - ' + arr.author;
         node.appendChild(span);
         fragment.appendChild(node);
       });
@@ -463,33 +495,33 @@ var Player = /*#__PURE__*/function () {
   }, {
     key: "loadSong",
     value: function loadSong() {
-      var _this3 = this;
+      var _this4 = this;
       var songObj = this.songList[this.currentIndex];
       this.$('.header h1').innerText = songObj.title;
       this.$('.header p').innerText = songObj.author + '-' + songObj.album;
       this.audio.src = songObj.url;
       this.audio.onloadedmetadata = function () {
-        return _this3.$('.time-end').innerText = _this3.formatTime(_this3.audio.duration);
+        return _this4.$('.time-end').innerText = _this4.formatTime(_this4.audio.duration);
       };
       this.loadLyrics();
     }
   }, {
     key: "playSong",
     value: function playSong() {
-      var _this4 = this;
+      var _this5 = this;
       this.audio.oncanplaythrough = function () {
-        return _this4.audio.play();
+        return _this5.audio.play();
       };
     }
   }, {
     key: "loadLyrics",
     value: function loadLyrics() {
-      var _this5 = this;
+      var _this6 = this;
       fetch(this.songList[this.currentIndex].lyric).then(function (res) {
         return res.json();
       }).then(function (data) {
         console.log(data.lrc.lyric);
-        _this5.setLyrics(data.lrc.lyric);
+        _this6.setLyrics(data.lrc.lyric);
         window.lyrics = data.lrc.lyric;
       });
     }
@@ -598,7 +630,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55799" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59882" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

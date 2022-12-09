@@ -69,17 +69,25 @@ body {
                 border: 1px solid rgba(240, 239, 239, 0.6);
                 background-color: rgb(184, 185, 185, 0.3);
                 border-radius: 4px;
-                width: 64px;
+                width: 47px;
                 height: 7px;
                 margin-top: 8px;
                 margin-bottom: 20px;
 
                 .current {
-                    margin-left: 1px;
                     border-radius: 3px;
                     background-color: $color-3;
-                    width: 28px;
+                    width: 21px;
                     height: 3px;
+
+                    &.left {
+                        margin-left: 1px;
+                    }
+
+                    &.right {
+                        margin-left: 23px;
+                    }
+
                 }
             }
         }
@@ -326,17 +334,17 @@ body {
                     align-items: center;
                     text-align: center;
 
-                    p {
+                    h6 {
                         flex: 1;
                         color: rgb(85, 131, 151);
                         font-size: 18px;
-                        margin: 4px 0px 4px 42px;
+                        margin: 8px 0px 8px 42px;
                     }
 
                     svg {
                         width: 42px;
                         height: 26px;
-                        margin: 4px;
+                        margin: 8px;
                     }
                 }
 
@@ -354,7 +362,7 @@ body {
                         border-bottom: 1px solid $color-8;
                         color: rgb(40, 40, 40);
                         font-size: 15px;
-                        padding: 8px 0 8px 22px;
+                        padding: 10px 0 10px 22px;
                         width: 100vw;
                         white-space: nowrap;
                         text-overflow: ellipsis;
