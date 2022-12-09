@@ -1,0 +1,338 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(149, 208, 212) 16%, rgb(115, 164, 185) 80%);
+}
+body #player {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+body #player .header {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #player .header .song-title {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 20px;
+}
+body #player .header .singer {
+  margin-top: 3px;
+  color: rgb(228, 239, 245);
+  text-align: center;
+  font-size: 16px;
+  width: 360px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body #player .header .slide {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(240, 239, 239, 0.6);
+  background-color: rgba(184, 185, 185, 0.3);
+  border-radius: 4px;
+  width: 47px;
+  height: 7px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+body #player .header .slide .current {
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 21px;
+  height: 3px;
+}
+body #player .header .slide .current.left {
+  margin-left: 1px;
+}
+body #player .header .slide .current.right {
+  margin-left: 23px;
+}
+body #player .show-area {
+  display: flex;
+  width: 200vw;
+  height: calc(100vh - 288px);
+  justify-content: space-between;
+  align-items: center;
+}
+body #player .show-area.home {
+  transform: translateX(50vw);
+  transition: transform 0.3s;
+}
+body #player .show-area.all-lyrics {
+  transform: translateX(-50vw);
+  transition: transform 0.3s;
+}
+body #player .show-area .show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+}
+body #player .show-area .show .animation {
+  margin-top: 30px;
+}
+body #player .show-area .show .animation .frame {
+  width: 240px;
+  height: 240px;
+  /* 相对定位 */
+  position: relative;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-top-color: #a0eaf0;
+  border-left-color: #a0eaf0;
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.2s linear infinite;
+}
+body #player .show-area .show .animation .frame.pause, body #player .show-area .show .animation .frame.pause::before, body #player .show-area .show .animation .frame.pause::after {
+  animation-play-state: paused;
+}
+body #player .show-area .show .animation .frame.running, body #player .show-area .show .animation .frame.running::before, body #player .show-area .show .animation .frame.running::after {
+  animation-play-state: running;
+}
+body #player .show-area .show .animation .frame .center {
+  font-size: 17px;
+  color: rgb(115, 164, 185);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(211, 239, 250);
+  position: absolute;
+  left: 45px;
+  top: 45px;
+  right: 45px;
+  bottom: 45px;
+  border-radius: 50%;
+}
+body #player .show-area .show .animation .frame::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-bottom-color: #a8d5e7;
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.6s linear infinite;
+}
+body #player .show-area .show .animation .frame::after {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 21px;
+  right: 21px;
+  bottom: 21px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-right-color: #f0eeee;
+  /* 执行动画：动画名 时长 线性的 无限次播放 */
+  animation: spin 2.2s linear infinite;
+}
+body #player .show-area .show .lyrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(60, 61, 61);
+}
+body #player .show-area .show .lyrics p {
+  font-size: 16px;
+  margin: 6px;
+}
+body #player .show-area .show .lyrics .current {
+  color: rgb(255, 255, 255);
+}
+body #player .show-area .show-lyrics {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100vw;
+  height: 100%;
+  overflow: hidden;
+}
+body #player .show-area .show-lyrics .container {
+  transition: all 0.6s;
+}
+body #player .show-area .show-lyrics .container p {
+  font-size: 16px;
+  margin: 10px;
+  color: rgb(60, 61, 61);
+}
+body #player .show-area .show-lyrics .container .current {
+  color: rgb(255, 255, 255);
+}
+body #player .Nav-bar {
+  margin-bottom: 10px;
+}
+body #player .Nav-bar .buttons {
+  display: flex;
+  justify-content: center;
+}
+body #player .Nav-bar .buttons svg {
+  width: 24px;
+  height: 24px;
+  margin: 18px;
+  opacity: 0.7;
+}
+body #player .Nav-bar .player-bar {
+  color: rgb(228, 239, 245);
+  font-size: 14px;
+  display: flex;
+  padding: 0 28px;
+  margin-top: 10px;
+  align-items: center;
+}
+body #player .Nav-bar .player-bar .bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(119, 128, 128, 0.6);
+  border-radius: 2px;
+  margin: 0 16px;
+}
+body #player .Nav-bar .player-bar .bar .progress {
+  width: 0%;
+  height: 100%;
+  border-radius: 2px;
+  background: rgb(255, 255, 255);
+  position: relative;
+}
+body #player .Nav-bar .player-bar .bar .progress::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgb(211, 239, 250);
+  background-size: contain;
+}
+body #player .Nav-bar .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #player .Nav-bar .actions svg {
+  width: 28px;
+  height: 28px;
+  margin: 20px;
+  opacity: 0.9;
+}
+body #player .Nav-bar .actions .btn-play {
+  width: 52px;
+  height: 52px;
+  opacity: 1;
+}
+body #player .playBox {
+  background: rgba(100, 100, 100, 0.4);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+body #player .playBox.hide {
+  display: none;
+}
+body #player .playBox.display {
+  display: block;
+}
+body #player .playBox .playList {
+  background-color: rgb(228, 239, 245);
+  position: fixed;
+  border-radius: 15px 15px 0 0;
+  bottom: 0;
+  width: 100%;
+  height: 52%;
+}
+body #player .playBox .playList .head {
+  display: flex;
+  border-bottom: 1px solid rgba(177, 177, 177, 0.2);
+  align-items: center;
+  text-align: center;
+}
+body #player .playBox .playList .head h6 {
+  flex: 1;
+  color: rgb(85, 131, 151);
+  font-size: 18px;
+  margin: 8px 0px 8px 42px;
+}
+body #player .playBox .playList .head svg {
+  width: 42px;
+  height: 26px;
+  margin: 8px;
+}
+body #player .playBox .playList .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body #player .playBox .playList .list p {
+  border-bottom: 1px solid rgba(177, 177, 177, 0.2);
+  color: rgb(40, 40, 40);
+  font-size: 15px;
+  padding: 10px 0 10px 22px;
+  width: 100vw;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+body #player .playBox .playList .list p span {
+  color: rgb(106, 110, 110);
+  font-size: 14px;
+}
+body #player .playBox .playList .list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=/style.f1595a2f.css.map */
